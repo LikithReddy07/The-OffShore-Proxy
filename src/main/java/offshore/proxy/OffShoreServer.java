@@ -57,7 +57,6 @@ public class OffShoreServer {
                     continue;
                 }
 
-                // 2. Connect to target server
                 Socket serverSocketConn = null;
                 try {
                     serverSocketConn = new Socket(host, port);
@@ -73,7 +72,6 @@ public class OffShoreServer {
                         serverSocketConn.getOutputStream().flush();
                     }
 
-                    // 3. Pipe data in background
                     Socket finalServerSocket = serverSocketConn;
                     executor.submit(() -> {
                         try {
