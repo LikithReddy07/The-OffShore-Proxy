@@ -10,7 +10,6 @@ public class TheOffShoreProxyApplication {
         SpringApplication.run(TheOffShoreProxyApplication.class, args);
         System.out.println("The OffShore Proxy Application...");
 
-        // Start the server in a separate thread
         new Thread(() -> {
             try {
                 new OffShoreServer().start(9090); // listen on port 9090

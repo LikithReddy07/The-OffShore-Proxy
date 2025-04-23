@@ -21,7 +21,6 @@ public class OffShoreServer {
 
         while (true) {
             try {
-                // 1. Read one request
                 ByteArrayOutputStream headerBuf = new ByteArrayOutputStream();
                 int c;
                 while ((c = clientIn.read()) != -1) {
@@ -88,7 +87,6 @@ public class OffShoreServer {
                 } catch (IOException e) {
                     System.out.println("Error connecting to server: " + e.getMessage());
                 } finally {
-                    // Always close server connection after a request cycle
                     if (serverSocketConn != null && !serverSocketConn.isClosed()) {
                         try { serverSocketConn.close(); } catch (IOException ignored) {}
                     }
